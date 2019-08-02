@@ -26,7 +26,7 @@ namespace SampleMVVM_WPF.Model
                 {
                     firstName = value;
                     RaisePropertyChanged("FirstName");
-                    RaisePropertyChanged("FirstName");
+                    RaisePropertyChanged("FullName");
                 }
             }
         }
@@ -44,7 +44,7 @@ namespace SampleMVVM_WPF.Model
                 {
                     lastName = value;
                     RaisePropertyChanged("LastName");
-                    RaisePropertyChanged("LastName");
+                    RaisePropertyChanged("FullName");
                 }
             }
         }
