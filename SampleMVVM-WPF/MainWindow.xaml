@@ -7,6 +7,7 @@
         xmlns:views="clr-namespace:SampleMVVM_WPF.Views"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
+    <!--https://www.tutorialspoint.com/mvvm-->
     <Grid>
         <!--<views:StudentView x:Name="StudentViewControl" Loaded="StudentViewControl_Loaded" /> Instacia pela main StudentViewControl_Loaded default-->
 
