@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleMVVM-WPF", "SampleMVVM-WPF.csproj", "{05A5B5E7-983D-491C-8B7B-D222A20A01F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleMVVM-WPF", "SampleMVVM-WPF\SampleMVVM-WPF.csproj", "{05A5B5E7-983D-491C-8B7B-D222A20A01F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleMVVMHierarchies-WPF", "..\SampleMVVMHierarchies-WPF\SampleMVVMHierarchies-WPF.csproj", "{E0697801-30FC-4730-A28A-A862DC8598BA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleMVVMHierarchies-WPF", "SampleMVVMHierarchies-WPF\SampleMVVMHierarchies-WPF.csproj", "{E0697801-30FC-4730-A28A-A862DC8598BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
