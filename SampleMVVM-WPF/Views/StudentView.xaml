@@ -17,6 +17,7 @@
     </UserControl.DataContext>
     Não usar é View First Construction in Code-behind instancia no prório code .cs
     -->
+    
     <!--
     <Grid>
         <StackPanel HorizontalAlignment="Left">
@@ -34,6 +35,7 @@
         </StackPanel>
     </Grid>
     -->
+    
     <UserControl.Resources>
         <!--<DataTemplate x:Key="studentsTemplate">-->
         <DataTemplate DataType = "{x:Type data:Student}">
@@ -47,6 +49,10 @@
 
     <Grid>
         <!--<ListBox ItemsSource="{Binding Students}" ItemTemplate="{StaticResource studentsTemplate}" />-->
-        <ListBox ItemsSource="{Binding Students}" />
+        <StackPanel Orientation="Horizontal">
+            <ListBox ItemsSource="{Binding Students}" SelectedItem="{Binding SelectedStudent}" />
+            <Button Content="Delete" Command="{Binding DeleteCommand}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" />
+        </StackPanel>
     </Grid>
+    
 </UserControl>

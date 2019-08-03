@@ -28,9 +28,7 @@ namespace SampleMVVM_WPF
 
         private void StudentViewControl_Loaded(object sender, RoutedEventArgs e)
         {
-            //StudentViewModel studentViewModel = new StudentViewModel();
-            //studentViewModel.LoadStudents();
-            //StudentViewControl.DataContext = studentViewModel;
+            //StudentViewControl.DataContext = new StudentViewModel();
         }
     }
 }
