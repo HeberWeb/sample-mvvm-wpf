@@ -36,11 +36,11 @@ namespace SampleMVVMHierarchies_WPF
             switch (destination)
             {
                 case "orders":
-                    //CurrentViewModel = orderViewModelModel;
+                    CurrentViewModel = orderViewModelModel;
                     break;
                 case "customers":
                 default:
-                    //CurrentViewModel = custListViewModel;
+                    CurrentViewModel = custListViewModel;
                     break;
             }
         }

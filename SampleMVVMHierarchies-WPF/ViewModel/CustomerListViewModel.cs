@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SampleMVVMHierarchies_WPF.ViewModel
 {
-    class CustomerListViewModel
+    class CustomerListViewModel : BindableBase
     {
     }
 }

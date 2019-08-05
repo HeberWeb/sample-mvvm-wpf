@@ -5,6 +5,7 @@ namespace SampleMVVMHierarchies_WPF
 {
     public class MyICommand<T> : ICommand
     {
+
         Action<T> _TargetExecuteMethod;
         Func<T, bool> _TargetCanExecuteMethod;
 
@@ -26,14 +27,9 @@ namespace SampleMVVMHierarchies_WPF
 
         #region ICommand Members
 
-        // Beware - should use weak references if command instance lifetime 
-        //is longer than lifetime of UI objects that get hooked up to command
-
-        // Prism commands solve this in their implementation 
-        public event EventHandler CanExecuteChanged = delegate { };
-
         bool ICommand.CanExecute(object parameter)
         {
+
             if (_TargetCanExecuteMethod != null)
             {
                 T tparm = (T)parameter;
@@ -48,6 +44,13 @@ namespace SampleMVVMHierarchies_WPF
             return false;
         }
 
+        // Beware - should use weak references if command instance lifetime is
+        //longer than lifetime of UI objects that get hooked up to command
+
+      // Prism commands solve this in their implementation 
+
+        public event EventHandler CanExecuteChanged = delegate { };
+
         void ICommand.Execute(object parameter)
         {
             if (_TargetExecuteMethod != null)
@@ -55,6 +58,7 @@ namespace SampleMVVMHierarchies_WPF
                 _TargetExecuteMethod((T)parameter);
             }
         }
+
         #endregion
     }
 }

@@ -3,25 +3,25 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:SampleMVVMHierarchies_WPF"
-        xmlns:views="clr-namespace:SampleMVVMHierarchies_WPF.Views"
-        xmlns:viewModels="clr-namespace:SampleMVVMHierarchies_WPF.ViewModel"
+        xmlns:local = "clr-namespace:SampleMVVMHierarchies_WPF" 
+        xmlns:views = "clr-namespace:SampleMVVMHierarchies_WPF.Views" 
+        xmlns:viewModels = "clr-namespace:SampleMVVMHierarchies_WPF.ViewModel" 
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Window.DataContext>
-        <local:MainWindowViewModel />
+        <local:MainWindowViewModel/>
     </Window.DataContext>
 
     <Window.Resources>
-        <DataTemplate DataType="{x:Type viewModels:CustomerListViewModel}">
-            <views:CustomerListView />
+        <DataTemplate DataType = "{x:Type viewModels:CustomerListViewModel}">
+            <views:CustomerListView/>
         </DataTemplate>
 
-        <DataTemplate DataType="{x:Type viewModels:OrderViewModel}">
-            <views:OrderView />
+        <DataTemplate DataType = "{x:Type viewModels:OrderViewModel}">
+            <views:OrderView/>
         </DataTemplate>
     </Window.Resources>
-    
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height = "Auto" />
@@ -49,5 +49,6 @@
         <Grid x:Name = "MainContent" Grid.Row = "1">
             <ContentControl Content = "{Binding CurrentViewModel}" />
         </Grid>
+
     </Grid>
 </Window>
