@@ -20,6 +20,8 @@ namespace SampleMVVMHierarchies_WPF
 
         private OrderViewModel orderViewModelModel = new OrderViewModel();
 
+        private AddEditCustomerViewModel addEditCustomerViewModel = new AddEditCustomerViewModel();
+
         private BindableBase _CurrentViewModel;
 
         public BindableBase CurrentViewModel
@@ -37,6 +39,9 @@ namespace SampleMVVMHierarchies_WPF
             {
                 case "orders":
                     CurrentViewModel = orderViewModelModel;
+                    break;
+                case "addCustomer":
+                    CurrentViewModel = addEditCustomerViewModel;
                     break;
                 case "customers":
                 default:
