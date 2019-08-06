@@ -60,6 +60,8 @@
     <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="Model\SimpleEditableCustomer.cs" />
     <Compile Include="MyICommand.cs" />
+    <Compile Include="Services\ICustomersRepository.cs" />
+    <Compile Include="Services\CustomersRepository.cs" />
     <Compile Include="ValidatableBindableBase.cs" />
     <Compile Include="ViewModel\AddEditCustomerViewModel.cs" />
     <Compile Include="ViewModel\CustomerListViewModel.cs" />
