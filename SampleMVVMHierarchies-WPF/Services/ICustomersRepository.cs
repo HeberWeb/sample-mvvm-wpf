@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace SampleMVVMHierarchies_WPF.Services
 {
-    public interface ICustomersRepository<T>
+    interface ICustomersRepository
     {
-        Task<List<T>> GetCustomersAsync();
-        Task<T> GetCustomerAsync(Guid id);
-        Task<T> AddCustomerAsync(T customer);
-        Task<T> UpdateCustomerAsync(T customer);
+        Task<List<Customer>> GetCustomersAsync();
+        Task<Customer> GetCustomerAsync(Guid id);
+        Task<Customer> AddCustomerAsync(Customer customer);
+        Task<Customer> UpdateCustomerAsync(Customer customer);
         Task DeleteCustomerAsync(Guid customerId);
     }
 
