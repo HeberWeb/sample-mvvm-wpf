@@ -21,15 +21,15 @@ namespace SampleMVVMHierarchies_WPF.ViewModel
 
         private async void GetCust()
         {
-            var custGet = await _customersRepository.GetCustomerAsync(0);
-            if (custGet != null)
-            {
-                SetCustomer(custGet);
-            }
-            else
-            {
-                SetCustomer(new Model.Customer());
-            }
+            //var custGet = _customersRepository.GetCustomerAsync(0);
+            //if (custGet != null)
+            //{
+            //    SetCustomer(custGet);
+            //}
+            //else
+            //{
+            //    SetCustomer(new Model.Customer());
+            //}
 
             SetCustomer(new Model.Customer());
         }
