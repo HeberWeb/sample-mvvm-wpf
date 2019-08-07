@@ -9,9 +9,9 @@ namespace SampleMVVMHierarchies_WPF.Model
 {
     class SimpleEditableCustomer : ValidatableBindableBase
     {
-        private Guid _id;
+        private long _id;
 
-        public Guid Id
+        public long Id
         {
             get { return _id; }
             set { SetProperty(ref _id, value); }

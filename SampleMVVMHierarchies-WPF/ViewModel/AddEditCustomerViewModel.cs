@@ -1,4 +1,5 @@
 ﻿using SampleMVVMHierarchies_WPF.Model;
+using SampleMVVMHierarchies_WPF.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +10,28 @@ namespace SampleMVVMHierarchies_WPF.ViewModel
 {
     class AddEditCustomerViewModel : BindableBase
     {
-        public AddEditCustomerViewModel()
+        private ICustomersRepository _customersRepository;
+        public AddEditCustomerViewModel(ICustomersRepository customersRepository)
         {
+            _customersRepository = customersRepository;
             CancelCommand = new MyICommand<string>(OnCancel);
             SaveCommand = new MyICommand<string>(OnSave, CanSave);
-            SetCustomer(new Customer());
+            this.GetCust();
+        }
+
+        private async void GetCust()
+        {
+            var custGet = await _customersRepository.GetCustomerAsync(0);
+            if (custGet != null)
+            {
+                SetCustomer(custGet);
+            }
+            else
+            {
+                SetCustomer(new Model.Customer());
+            }
+
+            SetCustomer(new Model.Customer());
         }
 
         private bool _EditMode;
@@ -44,13 +62,22 @@ namespace SampleMVVMHierarchies_WPF.ViewModel
             CopyCustomer(cust, Customer);
         }
 
-        private void CopyCustomer(Customer cust, SimpleEditableCustomer customer)
+        private void UpdateCustumer(SimpleEditableCustomer source, Customer target)
         {
-            customer.Id = cust.Id;
-            customer.FirstName = cust.FirstName;
-            customer.LastName = cust.LastName;
-            customer.Email = cust.Email;
-            customer.Phone = cust.Phone;
+            target.Id = source.Id;
+            target.FirstName = source.FirstName;
+            target.LastName = source.LastName;
+            target.Email = source.Email;
+            target.Phone = source.Phone;
+        }
+
+        private void CopyCustomer(Customer source, SimpleEditableCustomer target)
+        {
+            target.Id = source.Id;
+            target.FirstName = source.FirstName;
+            target.LastName = source.LastName;
+            target.Email = source.Email;
+            target.Phone = source.Phone;
         }
 
         private void RaiseCanExecuteChanged(object sender, EventArgs e)
@@ -68,8 +95,17 @@ namespace SampleMVVMHierarchies_WPF.ViewModel
             Done();
         }
 
-        private void OnSave(string t)
+        private async void OnSave(string t)
         {
+            UpdateCustumer(Customer, _editingCustomer);
+            if (EditMode)
+            {
+                await _customersRepository.UpdateCustomerAsync(_editingCustomer);
+            }
+            else
+            {
+                await _customersRepository.AddCustomerAsync(_editingCustomer);
+            }
             Done();
         }
 

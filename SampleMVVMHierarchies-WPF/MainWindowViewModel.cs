@@ -1,4 +1,5 @@
-﻿using SampleMVVMHierarchies_WPF.ViewModel;
+﻿using SampleMVVMHierarchies_WPF.Services;
+using SampleMVVMHierarchies_WPF.ViewModel;
 using SampleMVVMHierarchies_WPF.Views;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace SampleMVVMHierarchies_WPF
 
         private OrderViewModel orderViewModelModel = new OrderViewModel();
 
-        private AddEditCustomerViewModel addEditCustomerViewModel = new AddEditCustomerViewModel();
+        private AddEditCustomerViewModel addEditCustomerViewModel = new AddEditCustomerViewModel(new CustomersRepository());
 
         private BindableBase _CurrentViewModel;
 
