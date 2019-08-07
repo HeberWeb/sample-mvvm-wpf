@@ -10,7 +10,6 @@ namespace SampleMVVMHierarchies_WPF.Services
 {
     class CustomersRepository : ICustomersRepository
     {
-        DBProjContext _context = new DBProjContext();
         public Task<Customer> AddCustomerAsync(Customer customer)
         {
             throw new NotImplementedException();
@@ -23,13 +22,15 @@ namespace SampleMVVMHierarchies_WPF.Services
 
         public Task<Customer> GetCustomerAsync(Guid id)
         {
-            //return _context.Customers.ToListAsync();
             throw new NotImplementedException();
         }
 
         public Task<List<Customer>> GetCustomersAsync()
         {
-            throw new NotImplementedException();
+            using(DBProjContext db = new DBProjContext())
+            {
+                return db.Customers.ToListAsync();
+            }
         }
 
         public Task<Customer> UpdateCustomerAsync(Customer customer)
